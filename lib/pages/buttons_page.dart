@@ -16,23 +16,24 @@ class _ButtonsPageState extends State<ButtonsPage> {
       appBar: AppBar(
         title: const Text('Buttons'),
       ),
-      // backgroundColor: Colors.white,
-      backgroundColor: Colors.grey.shade100,
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(30.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _defaultButtons(onPressed: () {}),
-            const SizedBox(height: 20.0),
-            _defaultButtons(),
-            const SizedBox(height: 20.0),
-            _customButtons(onPressed: () {}),
-            const SizedBox(height: 20.0),
-            _customButtons(),
-            const SizedBox(height: 20.0),
-            _neumorphicButton(),
-          ],
+      body: SizedBox(
+        width: double.infinity,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(30.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _defaultButtons(onPressed: () {}),
+              const SizedBox(height: 20.0),
+              _defaultButtons(),
+              const SizedBox(height: 20.0),
+              _customButtons(onPressed: () {}),
+              const SizedBox(height: 20.0),
+              _customButtons(),
+              const SizedBox(height: 20.0),
+              _neumorphicButton(),
+            ],
+          ),
         ),
       ),
     );
@@ -117,12 +118,12 @@ class _ButtonsPageState extends State<ButtonsPage> {
   Widget _neumorphicButton() {
     return NeumorphicButton(
       onPressed: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Neumorphic button'),
-            duration: Duration(milliseconds: 1000),
-          ),
-        );
+        // ScaffoldMessenger.of(context).showSnackBar(
+        //   const SnackBar(
+        //     content: Text('Neumorphic button'),
+        //     duration: Duration(milliseconds: 1000),
+        //   ),
+        // );
       },
       child: const Icon(Icons.accessibility_new_rounded),
     );
