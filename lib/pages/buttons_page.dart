@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/neumorphic_container.dart';
 
 class ButtonsPage extends StatefulWidget {
   const ButtonsPage({Key? key}) : super(key: key);
@@ -14,20 +15,23 @@ class _ButtonsPageState extends State<ButtonsPage> {
       appBar: AppBar(
         title: const Text('Buttons'),
       ),
+      // backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade100,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(30.0),
-        child: Center(
-          child: Column(
-            children: [
-              _defaultButtons(onPressed: () {}),
-              const SizedBox(height: 20.0),
-              _defaultButtons(),
-              const SizedBox(height: 20.0),
-              _customButtons(onPressed: () {}),
-              const SizedBox(height: 20.0),
-              _customButtons(),
-            ],
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _defaultButtons(onPressed: () {}),
+            const SizedBox(height: 20.0),
+            _defaultButtons(),
+            const SizedBox(height: 20.0),
+            _customButtons(onPressed: () {}),
+            const SizedBox(height: 20.0),
+            _customButtons(),
+            const SizedBox(height: 20.0),
+            _neumorphicButton(),
+          ],
         ),
       ),
     );
@@ -106,6 +110,13 @@ class _ButtonsPageState extends State<ButtonsPage> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _neumorphicButton() {
+    return NeumorphicContainer(
+      color: Colors.white,
+      child: const Icon(Icons.accessibility),
     );
   }
 }
