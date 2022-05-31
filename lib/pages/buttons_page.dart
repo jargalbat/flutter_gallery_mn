@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/neumorphic_button.dart';
 import '../widgets/neumorphic_container.dart';
 
 class ButtonsPage extends StatefulWidget {
@@ -114,9 +115,16 @@ class _ButtonsPageState extends State<ButtonsPage> {
   }
 
   Widget _neumorphicButton() {
-    return NeumorphicContainer(
-      color: Colors.white,
-      child: const Icon(Icons.accessibility),
+    return NeumorphicButton(
+      onPressed: () {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Neumorphic button'),
+            duration: Duration(milliseconds: 1000),
+          ),
+        );
+      },
+      child: const Icon(Icons.accessibility_new_rounded),
     );
   }
 }
