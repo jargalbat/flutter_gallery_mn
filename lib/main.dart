@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gallery_mn/ui/home/home_page.dart';
-
 import 'utils/router.dart';
+import 'utils/theme/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +15,7 @@ class MyApp extends StatelessWidget {
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,
       title: 'Flutter gallery',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: lightTheme,
     );
   }
 }

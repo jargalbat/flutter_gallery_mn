@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_gallery_mn/pages/buttons_page.dart';
 import 'package:go_router/go_router.dart';
-import '../ui/error_page.dart';
-import '../ui/home/home_page.dart';
-import '../ui/shop/shop_page.dart';
+import '../pages/error_page.dart';
+import '../pages/home/home_page.dart';
+import '../pages/shop/shop_page.dart';
 
 class Routes {
   static const home = '/';
   static const shop = '/shop';
+  static const buttons = '/buttons';
 }
 
 final GoRouter router = GoRouter(
@@ -31,6 +33,11 @@ final GoRouter router = GoRouter(
       //   restorationId: state.pageKey.value,
       //   child: const ShopPage(),
       // ),
+    ),
+    GoRoute(
+      name: Routes.buttons,
+      path: Routes.buttons,
+      builder: (_, __) => const ButtonsPage(),
     ),
   ],
   errorBuilder: (_, state) => ErrorPage(key: state.pageKey, exception: state.error),
